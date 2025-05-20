@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "GatewayName",
+    "secret": false,
+    "tags": [],
+    "value": "apimaoaires.azure-api.net"
+  }
+}

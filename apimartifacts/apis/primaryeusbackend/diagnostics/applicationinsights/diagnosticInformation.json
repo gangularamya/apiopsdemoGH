@@ -1,0 +1,42 @@
+{
+  "properties": {
+    "loggerId": "/subscriptions/c6a8ee28-19ad-41b6-a129-4a6e1c15ef34/resourceGroups/apim-aoairg/providers/Microsoft.ApiManagement/service/apimaoaires/loggers/apimaoaiappinsights",
+    "alwaysLog": "allErrors",
+    "backend": {
+      "request": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      }
+    },
+    "frontend": {
+      "request": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      }
+    },
+    "httpCorrelationProtocol": "Legacy",
+    "logClientIp": true,
+    "metrics": true,
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "fixed"
+    },
+    "verbosity": "information"
+  }
+}

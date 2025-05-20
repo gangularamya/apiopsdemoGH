@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "test",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Azure OpenAI APIs for completions and search operation",
+    "isCurrent": true,
+    "displayName": "test",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://aoaieastusprimaryinst.openai.azure.com/openai",
+    "subscriptionKeyParameterNames": {
+      "header": "api-key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

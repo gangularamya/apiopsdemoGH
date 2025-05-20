@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: test
-  description: Azure OpenAI APIs for completions and search
+  description: Azure OpenAI APIs for completions and search operation
   version: '1.0'
 servers:
   - url: https://apimaoaires.azure-api.net/test

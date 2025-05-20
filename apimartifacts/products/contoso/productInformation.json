@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "contoso",
+    "description": "contoso test product",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true
+  }
+}

@@ -1,0 +1,43 @@
+<policies>
+	<inbound>
+		<base />
+		<!-- <set-backend-service id="apim-generated-policy" backend-id="primaryeusbackend-openai-endpoint" /> -->
+		<!--<authentication-managed-identity resource="https://cognitiveservices.azure.com/" output-token-variable-name="managed-id-access-token" ignore-error="false" />
+        <set-header name="Authorization" exists-action="override">
+            <value>@("Bearer " + (string)context.Variables["managed-id-access-token"])</value>
+        </set-header>-->
+		<set-header name="api-key" exists-action="override">
+			<value>629364abfdd94b2c81e9cb8115767016</value>
+		</set-header>
+		<!--There are pre-reqs to this policy that you must do in order to get this to show up in AppInsights-->
+		<!--1. An OpenAI api must be added to APIM Instance-->
+		<!--2. APIM instance must be integrated with AppInsights-->
+		<!--3. AppInsights logging must be enabled for the api you want to log-->
+		<!--4. Enable customer metrics with dimensions in AppInsights-->
+		<azure-openai-emit-token-metric namespace="AzureOpenAI">
+			<dimension name="Client IP" value="@(context.Request.IpAddress)" />
+			<dimension name="Subscription ID" />
+			<dimension name="API ID" />
+			<!-- <dimension name="Backend-URL" value="@(context.Res.Url.ToString())" /> -->
+		</azure-openai-emit-token-metric>
+		<azure-openai-token-limit counter-key="@(context.Subscription.Id)" tokens-per-minute="5000" estimate-prompt-tokens="false" />
+		<set-backend-service backend-id="myBackendPool" />
+	</inbound>
+	<backend>
+		<retry condition="@(context.Response.StatusCode == 429 ||  context.Response.StatusCode == 503)" count="1" interval="0" first-fast-retry="true">
+			<!-- Force an evaluation of available backends rather than retrying the failing one. -->
+			<set-backend-service backend-id="myBackendPool" />
+			<forward-request buffer-request-body="true" />
+		</retry>
+	</backend>
+	<outbound>
+		<base />
+		<!-- Add the actual backend URL to the response header -->
+		<set-header name="X-Backend-URL" exists-action="override">
+			<value>@(context.Request.Url.ToString())</value>
+		</set-header>
+	</outbound>
+	<on-error>
+		<base />
+	</on-error>
+</policies>

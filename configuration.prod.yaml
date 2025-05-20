@@ -1,0 +1,15 @@
+apimServiceName: apimaoaires-prod
+namedValues:
+- name: 6728d61d46346110a8851a88
+  properties:
+    displayName: Logger-Credentials--6728d61d46346110a8851a89
+    value: "{#appInsightsLoggerKey#}"
+loggers:
+    - name: apimaoaiappinsights
+      properties:
+        loggerType: applicationInsights
+        description: App insights logger info
+        resourceId: "/subscriptions/{#subscriptionId#}/resourceGroups/{#resourceGroupName#}/providers/microsoft.insights/components/apimaoaiappinsights"
+        credentials:
+          instrumentationKey: "{{Logger-Credentials--6728d61d46346110a8851a89}}"
+        isBuffered: true

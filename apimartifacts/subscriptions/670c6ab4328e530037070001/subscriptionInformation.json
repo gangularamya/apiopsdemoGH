@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "scope": "/subscriptions/c6a8ee28-19ad-41b6-a129-4a6e1c15ef34/resourceGroups/apim-aoairg/providers/Microsoft.ApiManagement/service/apimaoaires/products/starter",
+    "allowTracing": false,
+    "ownerId": "/subscriptions/c6a8ee28-19ad-41b6-a129-4a6e1c15ef34/resourceGroups/apim-aoairg/providers/Microsoft.ApiManagement/service/apimaoaires/users/1",
+    "state": "active"
+  }
+}

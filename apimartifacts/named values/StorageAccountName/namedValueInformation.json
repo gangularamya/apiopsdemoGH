@@ -1,8 +1,0 @@
-{
-  "properties": {
-    "displayName": "StorageAccountName",
-    "secret": false,
-    "tags": [],
-    "value": "rgstorageacc"
-  }
-}

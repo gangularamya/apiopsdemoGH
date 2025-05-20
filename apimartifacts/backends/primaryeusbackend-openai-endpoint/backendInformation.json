@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "circuitBreaker": {
+      "rules": [
+        {
+          "acceptRetryAfter": true,
+          "failureCondition": {
+            "count": 1,
+            "interval": "PT1M",
+            "statusCodeRanges": [
+              {
+                "max": 429,
+                "min": 429
+              }
+            ]
+          },
+          "name": "myBreakerRule",
+          "tripDuration": "PT1M"
+        }
+      ]
+    },
+    "credentials": {
+      "header": {}
+    },
+    "protocol": "http",
+    "tls": {
+      "validateCertificateChain": false,
+      "validateCertificateName": false
+    },
+    "url": "https://aoaieastusprimaryinst.openai.azure.com/openai"
+  }
+}

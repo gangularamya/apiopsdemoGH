@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "credentials": {},
+    "protocol": "http",
+    "url": "https://aoaieastusprimaryinst.openai.azure.com/openai"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "primaryeusbackend",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "Azure OpenAI APIs for completions and search",
+    "isCurrent": true,
+    "displayName": "primaryeusbackend",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://aoaieastusprimaryinst.openai.azure.com/openai",
+    "subscriptionKeyParameterNames": {
+      "header": "api-key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

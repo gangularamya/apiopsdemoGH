@@ -906,6 +906,41 @@ paths:
       responses:
         '200':
           description: ''
+  '/assistants/{urlpath}':
+    post:
+      summary: assistant
+      description: assistant api's
+      operationId: assistant
+      parameters:
+        - name: urlpath
+          in: path
+          required: true
+          schema:
+            type: ''
+        - name: api-version
+          in: query
+          schema:
+            type: ''
+      responses:
+        '200':
+          description: ''
+    get:
+      summary: assistantGet
+      description: assistant api's
+      operationId: 6830796a005f9199193e4716
+      parameters:
+        - name: urlpath
+          in: path
+          required: true
+          schema:
+            type: ''
+        - name: api-version
+          in: query
+          schema:
+            type: ''
+      responses:
+        '200':
+          description: ''
 components:
   schemas:
     errorResponse:
